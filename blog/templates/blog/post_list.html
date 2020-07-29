@@ -1,25 +1,17 @@
-<html>
+{% extends 'blog/base.html' %}
 
-	<head>
-		<title> Machine Learning blogs </title>
-	</head>	
-	<body>
-		
-	<div>
-		<h1> Blogs releted to AI and ML </h1>
-
-	</div>
-
+{% block content %}
 
 	{% for post in posts %}
-    <div>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
-        <p>published: {{ post.published_date }}</p>
-    </div>
+
+	<div class="post">
+	    <h2><a href="">{{ post.title }}</a></h2>
+	    <p>{{ post.text|linebreaksbr }}</p>
+	    <div class="date">
+	    	<p>published: {{ post.published_date }}</p>
+		</div>    	
+		</div>
+
 	{% endfor %}
 
-	<br>
-	<a href = "https://sudhir5595.github.io/"> Visit My Website </a>  
-	</body>
-</html>		
+{% endblock %}
